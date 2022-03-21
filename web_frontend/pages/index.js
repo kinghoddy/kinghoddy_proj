@@ -7,13 +7,11 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
+import List from '@mui/material/List';
 import Button from '@mui/material/Button';
-import Tooltip from '@mui/material/Tooltip';
+
 import MenuItem from '@mui/material/MenuItem';
 
-const pages = ['Products', 'Pricing', 'Blog'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 export default function Home() {
   const mystyle =({
@@ -56,6 +54,7 @@ export default function Home() {
   };
 
   return (
+    <div>
     <AppBar position="static" style={mystyle.Appbar} >
       <Container maxWidth="xl">
         <Toolbar disableGutters>
@@ -64,6 +63,7 @@ export default function Home() {
             noWrap
             component="div"
             sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
+            style={{color:'#f90'}}
           >
            KING HODDY
           </Typography>
@@ -99,8 +99,23 @@ export default function Home() {
               }}
             >
              
-                <MenuItem style={{width:'300px'}} onClick={handleCloseNavMenu}>
-                  <Typography >hfhfhfh</Typography>
+                <MenuItem style={{width:'300px'}} onClick={handleCloseNavMenu}   >
+                  <List>
+                <Typography style={{marginRight:'40px',fontSize:'13px',color:'#f90'}} >
+             Home
+           </Typography>
+           </List>
+           <List>
+           <Typography style={{marginRight:'40px',fontSize:'13px',}} >
+              My Project
+           </Typography>
+           </List>
+           <Typography style={{marginRight:'70px',fontSize:'13px',}} >
+             Skills
+           </Typography>
+           <Button  style={mystyle.button} >
+             Contact Me
+           </Button>
                 </MenuItem>
            
             </Menu>
@@ -110,6 +125,7 @@ export default function Home() {
             noWrap
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
+            style={{color:'#f90'}}
           >
               KING HODDY
           </Typography>
@@ -132,5 +148,11 @@ export default function Home() {
         </Toolbar>
       </Container>
     </AppBar>
+    <Container  >
+      <Typography>
+uururururu
+      </Typography>
+    </Container>
+    </div>
   )
 }
