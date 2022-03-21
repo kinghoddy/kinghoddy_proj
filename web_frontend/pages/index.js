@@ -12,48 +12,27 @@ import Button from "@mui/material/Button";
 
 import MenuItem from "@mui/material/MenuItem";
 import MainLayout from "../layouts/MainLayout";
+import { makeStyles } from "@mui/styles";
+
+const useStyles = makeStyles({
+  header: {
+    "& h1": {
+      color: "var(--secondary)",
+    },
+  },
+});
 
 export default function Home() {
-  const mystyle = {
-    Appbar: {
-      background: "transparent",
-      boxShadow: "none",
-      color: "black",
-    },
-    button: {
-      color: "white",
-      width: "120px",
-      background: "blue",
-      borderRadius: "14px",
-      border: "none",
-      height: "30px",
-      fontSize: "10px",
-      fontWeight: "700",
-      marginTop: "-2%",
-    },
-  };
-
-  const [anchorElNav, setAnchorElNav] = React.useState(null);
-  const [anchorElUser, setAnchorElUser] = React.useState(null);
-
-  const handleOpenNavMenu = (event) => {
-    setAnchorElNav(event.currentTarget);
-  };
-  const handleOpenUserMenu = (event) => {
-    setAnchorElUser(event.currentTarget);
-  };
-
-  const handleCloseNavMenu = () => {
-    setAnchorElNav(null);
-  };
-
-  const handleCloseUserMenu = () => {
-    setAnchorElUser(null);
-  };
+  const classes = useStyles();
 
   return (
     <MainLayout>
-      <h1>Hello world</h1>
+      <header className={classes.header}>
+        <h1>
+          Make your next project A{" "}
+          <span style={{ color: "var(--primary)" }}>Masterpiece</span>
+        </h1>
+      </header>
     </MainLayout>
   );
 }

@@ -29,16 +29,7 @@ function MainLayout({ children }) {
       <AppBar position="static">
         <Container maxWidth="xl">
           <Toolbar disableGutters>
-            <Typography
-              variant="h6"
-              noWrap
-              component="div"
-              sx={{ mr: 2, display: { xs: "none", md: "flex" } }}
-              style={{ color: "#f90" }}
-            >
-              KING HODDY
-            </Typography>
-
+            <img src="/img/logo/logo_text.png" />
             <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
               <IconButton
                 size="large"
