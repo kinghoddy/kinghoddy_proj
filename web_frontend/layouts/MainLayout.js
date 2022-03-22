@@ -19,14 +19,25 @@ import MenuIcon from "@mui/icons-material/Menu";
 const useStyles = makeStyles({
   root: {
     background: "#777",
+    background:'white',
+    boxShadow:'none',
+    color:'black'
+    
   },
+  button:{
+    background:"blue"
+    ,color:'white',
+    marginTop:'-2%'
+  }
+    
+ 
 });
 
 function MainLayout({ children }) {
   const classes = useStyles();
   return (
     <div>
-      <AppBar position="static">
+      <AppBar position="static" className={classes.root} >
         <Container maxWidth="xl">
           <Toolbar disableGutters>
             <img src="/img/logo/logo_text.png" />
@@ -77,7 +88,7 @@ function MainLayout({ children }) {
                   <Typography style={{ marginRight: "70px", fontSize: "13px" }}>
                     Skills
                   </Typography>
-                  <Button>Contact Me</Button>
+                  <Button  >Contact Me</Button>
                 </MenuItem>
               </Menu>
             </Box>
@@ -110,7 +121,7 @@ function MainLayout({ children }) {
               <Typography style={{ marginRight: "70px", fontSize: "13px" }}>
                 Skills
               </Typography>
-              <Button>Contact Me</Button>
+              <Button className={classes.button} >Contact Me</Button>
             </Box>
           </Toolbar>
         </Container>
