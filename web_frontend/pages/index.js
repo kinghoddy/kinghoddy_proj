@@ -19,29 +19,10 @@ import { makeStyles } from "@mui/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import { Grid } from "@mui/material";
 import Animator from "../components/Animator";
+import Section, { SectionHeader } from "../components/Section";
+import Skills from "../components/Home/Skills";
 
 const useStyles = makeStyles({
-  section1: {
-    marginTop: "50px",
-    textAlign: "center",
-
-    marginLeft: "50px",
-    marginRight: "50px",
-    "& .css-i4bv87-MuiSvgIcon-root": {
-      color: "#f90",
-      fontSize: "15px",
-      fontWeight: "900",
-    },
-    "& h1": {
-      fontSize: "15px",
-      fontWeight: "300",
-    },
-    "& h2": {
-      fontSize: "50px",
-
-      marginTop: "-1%",
-    },
-  },
   sectioncontainer: {
     textAlign: "center",
     display: "flex",
@@ -131,11 +112,8 @@ export default function Home() {
         </Grid>
         <img className="bottom_art" src="/img/icons_art.png" />
       </header>
-      <section className={classes.section1}>
-        <h1>
-          <RemoveIcon /> TONS OF AWESOME SERVICES <RemoveIcon />
-        </h1>
-        <h2>Our Services</h2>
+      <Section>
+        <SectionHeader title="Our Services" subTitle="what we offer" />
         <div className={classes.sectioncontainer}>
           <Grid item lg={4}>
             <img src="/img/icon1.png" />
@@ -162,7 +140,12 @@ export default function Home() {
             </p>
           </Grid>
         </div>
-      </section>
+      </Section>
+
+      <Section style={{ background: "#f7f7f7" }}>
+        {/* Add the about me here and complete the skills */}
+        <Skills />
+      </Section>
     </MainLayout>
   );
 }
