@@ -1,7 +1,7 @@
 import * as React from "react";
-import RemoveIcon from '@mui/icons-material/Remove';
+import RemoveIcon from "@mui/icons-material/Remove";
 import AppBar from "@mui/material/AppBar";
-import DesktopAccessDisabledIcon from '@mui/icons-material/DesktopAccessDisabled';
+import DesktopAccessDisabledIcon from "@mui/icons-material/DesktopAccessDisabled";
 import Card from "@mui/material/Card";
 import Toolbar from "@mui/material/Toolbar";
 import IconButton from "@mui/material/IconButton";
@@ -18,64 +18,49 @@ import MainLayout from "../layouts/MainLayout";
 import { makeStyles } from "@mui/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import { Grid } from "@mui/material";
+import Animator from "../components/Animator";
 
 const useStyles = makeStyles({
-  
+  section1: {
+    marginTop: "50px",
+    textAlign: "center",
 
-  footer: {
-    "& .container-footer": {
-      marginLeft: "0",
+    marginLeft: "50px",
+    marginRight: "50px",
+    "& .css-i4bv87-MuiSvgIcon-root": {
+      color: "#f90",
+      fontSize: "15px",
+      fontWeight: "900",
     },
-    "& .container-footer img": {
-      width: "800px ",
-      marginTop: "2px",
+    "& h1": {
+      fontSize: "15px",
+      fontWeight: "300",
+    },
+    "& h2": {
+      fontSize: "50px",
+
+      marginTop: "-1%",
     },
   },
-  section1:{
-   marginTop:'50px',
-textAlign:'center',
-
-marginLeft:'50px',
-marginRight:'50px',
-'& .css-i4bv87-MuiSvgIcon-root':{
-  color:'#f90',
-  fontSize:'15px',
- fontWeight:'900'
-  
-},
-'& h1':{
-  fontSize:'15px',
-  fontWeight:'300',
-  
-  
-},
-'& h2':{
-  fontSize:'50px',
-
-  marginTop:'-1%'
-
-},
-  },
-sectioncontainer:{
-  textAlign:'center',
-  display:'flex',
-  flexDirection:'column',
-
-["@media (min-width : 1200px)"]: {
-  flexDirection:'row',
-  textAlign:'center',
-
-  justifyContent:'space-around',
-},
-
-},
- header: {
-    minHeight: "100vh",
-    alignItems: "center",
+  sectioncontainer: {
+    textAlign: "center",
     display: "flex",
+    flexDirection: "column",
+
+    ["@media (min-width : 1200px)"]: {
+      flexDirection: "row",
+      textAlign: "center",
+
+      justifyContent: "space-around",
+    },
+  },
+  header: {
+    paddingTop: 50,
+    position: "relative",
+    overflow: "hidden",
     "& h1": {
       color: "var(--secondary)",
-      fontSize: "35px",
+      fontSize: "45px",
       "& span": {
         color: "var(--primary)",
       },
@@ -83,21 +68,36 @@ sectioncontainer:{
         fontSize: "75px",
       },
     },
+    "& .bottom_art": {
+      width: "70%",
+      ["@media (min-width : 1200px)"]: {
+        width: "50%",
+      },
+    },
+    "& .container": {
+      padding: "15vh  20px",
 
-    ["@media (min-width : 1200px)"]: {
-      padding: "20px  15vw",
+      ["@media (min-width : 1200px)"]: {
+        padding: "17vh  15vw",
+      },
     },
   },
 
   headerArt: {
-    height: "50vh",
+    height: "100vh",
+    display: "none",
+    position: "absolute",
+    top: "-17%",
+    right: "-17%",
     "& img ": {
-      height: "1005",
-      width: "100%",
-      objectFit: "contain",
+      height: "100%",
+      // width: "100%",
+      // objectFit: "contain",
+    },
+    ["@media (min-width : 760px)"]: {
+      display: "block",
     },
   },
-
 });
 
 export default function Home() {
@@ -106,51 +106,61 @@ export default function Home() {
   return (
     <MainLayout active="home">
       <header className={classes.header}>
-        <Grid container alignItems="center">
-          <Grid item lg={6}>
-            <h1>
-              Make your
-              <br /> next project
-              <br /> A <span>Masterpiece</span>
-            </h1>
-            <Typography>
-              i'm a full stack web and mobile developer were all About bringing
-              your imaginations to life
-            </Typography>
-          </Grid>
+        <Grid container alignItems="center" spacing={4} className="container">
+          <Animator variant="slide" direction="left" delay={800} timeout={1000}>
+            <Grid item md={6}>
+              <h1>
+                Make your
+                <br /> next project
+                <br /> A <span>Masterpiece</span>
+              </h1>
+              <Typography color="textSecondary">
+                I&apos; m a full stack web and mobile developer were all About
+                bringing your imaginations to life
+              </Typography>
+            </Grid>
+          </Animator>
 
-          <Grid item lg={6}>
-            <div className={classes.headerArt}>
-              <img src="/img/devs.png" />
-            </div>
-          </Grid>
+          <Animator variant="fade" delay={100} timeout={500}>
+            <Grid item md={6}>
+              <div className={classes.headerArt}>
+                <img src="/img/header_art.png" />
+              </div>
+            </Grid>
+          </Animator>
         </Grid>
+        <img className="bottom_art" src="/img/icons_art.png" />
       </header>
-      <footer className={classes.footer}>
-        <Container disableGutters className="container-footer">
-          <img src="/img/icons_art.png" />
-        </Container>
-       
-     
-      </footer>
-      <section className={classes.section1} >
+      <section className={classes.section1}>
         <h1>
-         <RemoveIcon/>   TONS OF AWESOME SERVICES <RemoveIcon/>
+          <RemoveIcon /> TONS OF AWESOME SERVICES <RemoveIcon />
         </h1>
         <h2>Our Services</h2>
-      <div className={classes.sectioncontainer} >
-        <Grid item lg={4}><img src="/img/icon1.png"/>
-        <h3>Mobile Development</h3>
-        <p>The best astonishing mobile apps with<br/> high quality users deserv.</p>
-        
-        </Grid>
-        <Grid item lg={4}><img src="/img/icon2.png"/>
-        <h3>Websites Development</h3>
-        <p>Innovative & creative website to spread<br/> your message and to express yourself.</p>
-        </Grid>
-        <Grid item lg={4}><img src="/img/icon3.png"/>
-        <h3>UI/UX Design</h3>
-        <p>We provide the best UI/UX Design by<br/>  followingthe latest trends of the market.</p></Grid>
+        <div className={classes.sectioncontainer}>
+          <Grid item lg={4}>
+            <img src="/img/icon1.png" />
+            <h3>Mobile Development</h3>
+            <p>
+              The best astonishing mobile apps with
+              <br /> high quality users deserv.
+            </p>
+          </Grid>
+          <Grid item lg={4}>
+            <img src="/img/icon2.png" />
+            <h3>Websites Development</h3>
+            <p>
+              Innovative & creative website to spread
+              <br /> your message and to express yourself.
+            </p>
+          </Grid>
+          <Grid item lg={4}>
+            <img src="/img/icon3.png" />
+            <h3>UI/UX Design</h3>
+            <p>
+              We provide the best UI/UX Design by
+              <br /> followingthe latest trends of the market.
+            </p>
+          </Grid>
         </div>
       </section>
     </MainLayout>

@@ -15,13 +15,12 @@ const useStyles = makeStyles({
   toolbar: {
     color: "#fff",
     padding: "0px 20px",
-    background: "none",
-    borderBottom: "1px solid #ddd",
+    // borderBottom: "1px solid #ddd",
     transition: "all 0.3s",
-    "& .scrolled": {
+    ["@media (min-width : 1200px)"]: {},
+    "&.scrolled": {
+      boxShadow: "0 5px 5px #0001",
       background: "#fff",
-      color: "#333",
-      borderBottom: "1px solid #ddd",
     },
 
     "& ul": {
@@ -120,6 +119,15 @@ function AppToolbar({ active, routes = [], logo }) {
       </ul>
     </div>
   );
+  const watchScrolled = () => {
+    const top = document.documentElement.scrollTop;
+    if (top > 100) setScrolled(true);
+    else setScrolled(false);
+  };
+  React.useEffect(() => {
+    watchScrolled();
+    window.addEventListener("scroll", watchScrolled);
+  }, []);
 
   return (
     <AppBar color="transparent" elevation={0}>
