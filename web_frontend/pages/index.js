@@ -59,7 +59,7 @@ const useStyles = makeStyles({
       padding: "15vh  20px",
 
       ["@media (min-width : 1200px)"]: {
-        padding: "17vh  15vw",
+        padding: "20vh  15vw",
       },
     },
   },
