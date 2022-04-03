@@ -23,6 +23,57 @@ import Section, { SectionHeader } from "../components/Section";
 import Skills from "../components/Home/Skills";
 
 const useStyles = makeStyles({
+  
+  sectioncontainer2:{
+    '& .About':{
+      ['@media (min-width:1200px)']:{
+        marginTop:'100px',
+        marginLeft:'50px',
+        width:'500px'
+      },
+    },
+    '& .makeStyles-sectionHeader-12 ':{
+      ['@media (min-width:1200px)']:{
+        display:'block'
+      },
+    },
+    '& h1':{
+color:'#999',
+fontSize:'15px',
+marginTop:'10px',
+
+['@media (min-width:1200px)']:{
+  fontSize:'20px',
+},
+    },
+    '& p':{
+color:'#999',
+fontSize:'10px',
+marginTop:'10px',
+['@media (min-width:1200px)']:{
+  fontSize:'15px',
+},
+    },
+    '& img':{
+width:'300px',
+height:'300px',
+marginLeft:'auto',
+marginRight:'auto',
+display:'block',
+['@media (min-width:1200px)']:{
+  width:'440px',
+  height:'440px',
+  marginRight:'50px',
+},
+    },
+display:"flex",
+flexDirection:'column',
+
+justifyContent:'space-around',
+['@media (min-width:1200px)']:{
+  flexDirection:'row',
+},
+  },
   sectioncontainer: {
     textAlign: "center",
     display: "flex",
@@ -143,6 +194,21 @@ export default function Home() {
       </Section>
 
       <Section style={{ background: "#f7f7f7" }}>
+      
+        <div  className={classes.sectioncontainer2} >
+      <Grid item lg={6}>
+<img src='img/profile_picture.png'/>
+        </Grid>
+        <Grid item lg={4} className="About" >
+        <SectionHeader title="About me" subTitle="who am i"   />
+<h1>I am Noel, a web&mobile developer with 3 Years of Experience</h1>
+<p>Hi human, I&apos;m john. As a passionate front-end developer ,
+   I prefer to run my own business rather than routine
+   office work. Such lifestyle helps me enjoy my favorite hobbie - traveling. Being able to do your job in every corner of our planet is amazing<br/>
+
+</p>
+</Grid>
+        </div>
         {/* Add the about me here and complete the skills */}
         <Skills />
       </Section>
