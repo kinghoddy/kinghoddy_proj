@@ -12,7 +12,7 @@ const useStyles = makeStyles({
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
-    marginBottom: 5,
+    marginBottom: 20,
     "& .sub": {
       display: "flex",
       marginBottom: 10,
