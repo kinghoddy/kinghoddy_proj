@@ -68,7 +68,7 @@ export default function Home() {
   const classes = useStyles();
 
   return (
-    <MainLayout active="home">
+    <MainLayout active="home" title="Home ">
       <header className={classes.header}>
         <Grid container alignItems="center" spacing={4} className="container">
           <Animator variant="slide" direction="left" delay={800} timeout={1000}>

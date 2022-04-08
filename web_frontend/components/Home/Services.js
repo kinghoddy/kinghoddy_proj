@@ -24,7 +24,7 @@ function Services() {
   return (
     <Grid container spacing={10}>
       {services.map((cur) => (
-        <Grid item lg={4} style={{ textAlign: "center" }}>
+        <Grid item lg={4} style={{ textAlign: "center" }} key={cur.title}>
           <img src={cur.img} />
           <Typography variant="h6" style={{ fontWeight: 700 }}>
             {cur.title}

@@ -13,8 +13,8 @@ export default class MyDocument extends Document {
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
           />
-          <meta property="og:image" content="/img/favicon.jpg" />
-          <link rel="shortcut icon" href="/img/logo/logo_s.png" />
+          <meta property="og:image" content="/img/profile_picture.png" />
+          <link rel="shortcut icon" href="/img/profile_picture.png" />
           <meta
             name="google-site-verification"
             content="LnYh0UQt4hnAaDsFGORlZ9p50zKahbAMOJD9cKGCIGQ"
