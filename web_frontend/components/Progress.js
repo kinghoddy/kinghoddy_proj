@@ -1,62 +1,53 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
-import LinearProgress from '@mui/material/LinearProgress';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
+import * as React from "react";
+import PropTypes from "prop-types";
+import LinearProgress from "@mui/material/LinearProgress";
+import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
 import { makeStyles } from "@mui/styles";
+import { Grid } from "@mui/material";
+const progress = [
+  {
+    title: "Web Frontend",
+    skill1: "NEXT JS",
+    skill2: "HTML & CSS",
+    skill3: "REACT JS",
+    skill4: "JAVASCRIPT",
+  },
+  {
+    title: "Mobile & Backend Development",
+    skill1: "REACT NATIVE",
+    skill2: "IONIC",
+  
+  },
+  {
+    title: "Personal Skills",
+    skill1: "ENGLISH",
+    skill2: "TEAMWORK",
+    skill3: "COMMUNICATION",
+    skill4: "ADAPTATION",
+  },
+];
+
 
 const useStyles = makeStyles({
-  section:{
- 
-    '& h1':{
-      fontSize:'12px',
-      marginBottom:'8px',
-      marginTop:'20px',
-      textAlign:"center",
-      ["@media (min-width:1200px)"]:{
-        textAlign:"start", 
-        },
+  section: {
+    "& .css-5xe99f-MuiLinearProgress-bar1": {
+      background: "#f90",
     },
-    '& p':{
-fontSize:'10px',
-
+    "& .css-3rq6cm-MuiTypography-root ": {
+      Width: "300px",
     },
-'& .css-5xe99f-MuiLinearProgress-bar1':{
-  background:'#f90',
-  
-  
-}
-,
-'& .css-ahj2mt-MuiTypography-root':{
-fontSize:'11px'
-},
-display:"flex",
-flexDirection:"column",
-color:'white',
-justifyContent:'center',
-alignItems:'center',
-marginTop:'30px',
-marginBottom:'40px',
-["@media (min-width:1200px)"]:{
-flexDirection:'row',
-justifyContent:'space-around'
-},
+    marginTop: "30px",
   },
-})
+});
 function LinearProgressWithLabel(props) {
-  
   return (
-  
-
-  
-    <Box sx={{ display: 'flex', alignItems: 'center' }}  >
-      <Box sx={{ width: '100%', mr: 1 }}  >
-        <LinearProgress variant="determinate"   {...props} />
+    <Box sx={{ display: "flex", alignItems: "center" }}>
+      <Box sx={{ width: "100%", mr: 1 }}>
+        <LinearProgress variant="determinate" {...props} />
       </Box>
       <Box sx={{ minWidth: 35 }}>
-        <Typography  >{`${Math.round(
-          props.value,
-        )}%`}</Typography>
+        <Typography>{`${Math.round(props.value)}%`}</Typography>
       </Box>
     </Box>
   );
@@ -72,58 +63,50 @@ LinearProgressWithLabel.propTypes = {
 
 export default function LinearWithValueLabel() {
   const classes = useStyles();
-  
+
   return (
-    <section  className={classes.section}  >
-    <div className={classes.container} >
-      <h1>Web Frontend</h1>
-    <Box sx={{ width: '250px' }}  >
-      <p>NEXT JS</p>
-      <LinearProgressWithLabel value={90}  sx={{ height:"6px"}}  />
-    </Box>
-    <Box sx={{ width: '250px' }}  >
-      <p>HTML&CSS</p>
-      <LinearProgressWithLabel value={100} sx={{ height:"6px"}} />
-    </Box>
-    <Box sx={{ width: '250px' }}  >
-      <p>REACT</p>
-      <LinearProgressWithLabel value={90}  sx={{ height:"6px"}}  />
-    </Box>
-    <Box sx={{ width: '250px' }}  >
-      <p>JAVASCRIPT</p>
-      <LinearProgressWithLabel value={90} sx={{ height:"6.2px"}}  />
-    </Box>
+    <div className={classes.section}>
+      <Grid container spacing={10}>
+        {progress.map((cur) => (
+          <Grid item lg={4} xs={12}>
+            <Typography variant="h7" color="white">
+              {cur.title}
+            </Typography>
+            <Typography
+              style={{ maxWidth: "80vw" }}
+              color="white"
+              variant="body2"
+            >
+              {cur.skill1}
+              <LinearProgressWithLabel value={100} sx={{ height: "6.2px" }} />
+            </Typography>
+            <Typography
+              style={{ maxWidth: "80vw" }}
+              color="white"
+              variant="body2"
+            >
+              {cur.skill2}
+              <LinearProgressWithLabel value={90} sx={{ height: "6.2px" }} />
+            </Typography>
+            <Typography
+              style={{ maxWidth: "80vw" }}
+              color="white"
+              variant="body2"
+            >
+              {cur.skill3}
+              <LinearProgressWithLabel value={100} sx={{ height: "6.2px" }} />
+            </Typography>
+            <Typography
+              style={{ maxWidth: "80vw" }}
+              color="white"
+              variant="body2"
+            >
+              {cur.skill4}
+              <LinearProgressWithLabel value={90} sx={{ height: "6.2px" }} />
+            </Typography>
+          </Grid>
+        ))}
+      </Grid>
     </div>
-    <div className={classes.container2} >
-      <h1>Mobile Application</h1>
-    <Box sx={{ width: '250px' }}  >
-      <p>REACTNATIVE</p>
-      <LinearProgressWithLabel value={80}  sx={{ height:"6px"}}  />
-    </Box>
-   <div>
-     <h1>Backend Development</h1>
-    <Box sx={{ width: '250px' }}  >
-      <p>NODE JS</p>
-      <LinearProgressWithLabel value={80}  sx={{ height:"6.2px"}}/>
-    </Box>
-    </div>
-    </div>
-    <div className={classes.container3} >
-      <h1>Personal Skills</h1>
-    <Box sx={{ width: '250px' }}  >
-      <p>ENGLISH</p>
-      <LinearProgressWithLabel value={100} sx={{ height:"6px"}} />
-    </Box>
-    <Box sx={{ width: '250px' }}   >
-      <p>TEAMWORK</p>
-      <LinearProgressWithLabel value={100}  sx={{ height:"6px"}} />
-    </Box>
-    <Box sx={{ width: '250px' }}   >
-      <p>COMMUNICATION</p>
-      <LinearProgressWithLabel value={90}sx={{ height:"6.2px"}}/>
-    </Box>
-    
-    </div>
-  </section>
   );
 }
