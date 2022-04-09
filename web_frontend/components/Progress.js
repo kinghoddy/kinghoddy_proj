@@ -36,7 +36,7 @@ function LinearProgressWithLabel({ title, content }) {
         {title}
       </Typography>
       {content.map((item) => (
-        <div className={classes.content}>
+        <div key={item.label} className={classes.content}>
           <div className="title">
             <p>{item.label}</p>
             <Typography>{`${Math.round(item.value)}%`}</Typography>
