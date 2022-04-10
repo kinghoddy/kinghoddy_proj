@@ -1,4 +1,4 @@
-import { Grid, Typography } from "@mui/material";
+import { Button, Grid, Typography } from "@mui/material";
 import React from "react";
 import { SectionHeader } from "../Section";
 
@@ -17,12 +17,19 @@ function AboutMe() {
         <Typography variant="h6">
           I am Noel, a web & mobile developer with 3 Years of Experience
         </Typography>
-        <Typography variant="body2" style={{ lineHeight: 1.8 }} color="#777">
-          Hi human, I&apos;m john. As a passionate front-end developer , I
-          prefer to run my own business rather than routine office work. Such
-          lifestyle helps me enjoy my favorite hobbie - traveling. Being able to
-          do your job in every corner of our planet is amazing
+        <Typography
+          variant="body2"
+          style={{ marginBottom: 40, lineHeight: 1.8 }}
+          color="#777"
+        >
+          As a passionate developer , I always concerned with attaining 100%
+          costumer sertisfaction. I use modern design structures with minimum
+          errors nnd bugs, because i dont belief in a bugless code.
         </Typography>
+
+        <Button color="secondary" size="large" variant="contained">
+          Contact Me
+        </Button>
       </Grid>
     </Grid>
   );

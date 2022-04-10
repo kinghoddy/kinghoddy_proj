@@ -1,15 +1,6 @@
 import React from "react";
-import {
-  AppBar,
-  Container,
-  Typography,
-  Box,
-  Menu,
-  IconButton,
-  List,
-  Button,
-  MenuItem,
-} from "@mui/material";
+import {} from "@mui/material";
+import Head from "next/head";
 
 import { makeStyles } from "@mui/styles";
 
@@ -29,7 +20,7 @@ const useStyles = makeStyles({
   },
 });
 
-function MainLayout({ active, children }) {
+function MainLayout({ active, title, description, children }) {
   const classes = useStyles();
 
   const routes = [
@@ -51,6 +42,17 @@ function MainLayout({ active, children }) {
   ];
   return (
     <div>
+      <Head>
+        <title> {title} | King Hoddy</title>
+        <meta property="og:title" content={title} />
+        <meta
+          property="og:description"
+          content={
+            description ||
+            "I' m a full stack web and mobile developer were all About bringing your imaginations to life"
+          }
+        />
+      </Head>
       <Toolbar active={active} routes={routes} logo="/img/logo/logo_text.png" />
 
       {children}
