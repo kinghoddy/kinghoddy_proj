@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import Typography from "@mui/material/Typography";
-
+import Feedback from '../components/Feedback'
 import MainLayout from "../layouts/MainLayout";
 import { makeStyles } from "@mui/styles";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -105,6 +105,8 @@ export default function Home() {
         <AboutMe />
         <Skills />
       </Section>
+      <Feedback/>
+
     </MainLayout>
   );
 }
