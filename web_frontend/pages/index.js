@@ -9,6 +9,7 @@ import { Grid } from "@mui/material";
 import Animator from "../components/Animator";
 import Section, { SectionHeader } from "../components/Section";
 import Skills from "../components/Home/Skills";
+import Footer from "../components/Footer";
 import AboutMe from "../components/Home/AboutMe";
 import Services from "../components/Home/Services";
 
@@ -106,6 +107,7 @@ export default function Home() {
         <Skills />
       </Section>
       <Feedback/>
+      <Footer/>
 
     </MainLayout>
   );

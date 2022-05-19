@@ -116,7 +116,6 @@ export default function LinearWithValueLabel() {
   };
 
   const test = { ...progress.web };
-  console.log(test);
 
   return (
     <Grid container spacing={10}>
