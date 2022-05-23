@@ -1,7 +1,7 @@
 import * as React from "react";
 
 import Typography from "@mui/material/Typography";
-import Feedback from "../components/Feedback";
+import Feedback from '../components/Feedback'
 import MainLayout from "../layouts/MainLayout";
 import { makeStyles } from "@mui/styles";
 import CssBaseline from "@mui/material/CssBaseline";
@@ -9,10 +9,8 @@ import { Grid } from "@mui/material";
 import Animator from "../components/Animator";
 import Section, { SectionHeader } from "../components/Section";
 import Skills from "../components/Home/Skills";
-import Footer from "../components/Footer";
 import AboutMe from "../components/Home/AboutMe";
 import Services from "../components/Home/Services";
-import { GlobalContext } from "../context/Provider";
 
 const useStyles = makeStyles({
   header: {
@@ -68,7 +66,6 @@ const useStyles = makeStyles({
 
 export default function Home() {
   const classes = useStyles();
-  const { projects, setProjects } = React.useContext(GlobalContext);
 
   return (
     <MainLayout active="home" title="Home ">
@@ -108,13 +105,8 @@ export default function Home() {
         <AboutMe />
         <Skills />
       </Section>
-<<<<<<< HEAD
-      <Feedback />
-=======
       <Feedback/>
-      <Footer/>
 
->>>>>>> bbee8247e40794761ce64fcd682f46ad1de84b77
     </MainLayout>
   );
 }
