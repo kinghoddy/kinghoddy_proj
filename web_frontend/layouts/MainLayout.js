@@ -44,7 +44,7 @@ function MainLayout({ active, title, description, children }) {
     <div>
       <Head>
         <title> {title} | King Hoddy</title>
-        <meta property="og:title" content={title} />
+        <meta property="og:title" content={title | "King Hoddy"} />
         <meta
           property="og:description"
           content={

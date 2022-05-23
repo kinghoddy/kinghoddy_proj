@@ -110,13 +110,11 @@ export default function LinearWithValueLabel() {
           label: "Communication",
           value: 90,
         },
-    
       ],
     },
   };
 
   const test = { ...progress.web };
-  console.log(test);
 
   return (
     <Grid container spacing={10}>
