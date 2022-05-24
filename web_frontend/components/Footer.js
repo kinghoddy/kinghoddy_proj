@@ -83,12 +83,9 @@ function Footer() {
             </Typography>
             <Typography variant="body1">
               <PhoneIcon sx={{ color: "#f90", fontSize: "18px" }} />
-              1-234-567-89
+              +234 808 904 0350
             </Typography>
-            <Typography variant="body1">
-              <LocationOnIcon sx={{ color: "#f90", fontSize: "18px" }} />
-              1010 Avenue of the Moon, New York, NY 10018 US.
-            </Typography>
+
             <Typography variant="body1">
               <AccessTimeIcon sx={{ color: "#f90", fontSize: "18px" }} />
               Mon - Sat 8.00 - 18.00. Sunday CLOSED

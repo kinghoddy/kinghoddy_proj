@@ -108,13 +108,8 @@ export default function Home() {
         <AboutMe />
         <Skills />
       </Section>
-<<<<<<< HEAD
       <Feedback />
-=======
-      <Feedback/>
-      <Footer/>
-
->>>>>>> bbee8247e40794761ce64fcd682f46ad1de84b77
+      <Footer />
     </MainLayout>
   );
 }
