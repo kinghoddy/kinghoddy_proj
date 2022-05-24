@@ -3,7 +3,6 @@ import {
   Box,
   Button,
   CircularProgress,
-  Divider,
   Drawer,
   Hidden,
   IconButton,
@@ -162,32 +161,13 @@ function MainLayout({ children, loading, badge, description, title, route }) {
         <meta name="description" property={description} />
       </Head>
       <nav className={classes.drawer}>
-        <Hidden smUp implementation="css">
-          <Drawer
-            variant="temporary"
-            open={open}
-            classes={{
-              paper: classes.drawerPaper,
-            }}
-            onClose={() => setOpen(false)}
-            ModalProps={{
-              keepMounted: true, // Better open performance on mobile.
-            }}
-          >
-            <img
-              src="/img/logo_text.png"
-              style={{ height: 140, objectFit: "cover", width: 240 }}
-            />
-            {drawer}
-          </Drawer>
-        </Hidden>
-        <Hidden xsDown implementation="css">
+        <Hidden lgDown implementation="js">
           <Drawer
             classes={{
               paper: classes.drawerPaper,
             }}
-            variant="permanent"
-            open
+            variant="persistent"
+            open={!open}
           >
             <Box p={2}>
               <img
@@ -201,6 +181,25 @@ function MainLayout({ children, loading, badge, description, title, route }) {
                 Admin Console
               </Typography>
             </Box>
+            {drawer}
+          </Drawer>
+        </Hidden>
+        <Hidden smUp implementation="js">
+          <Drawer
+            variant="temporary"
+            open={open}
+            classes={{
+              paper: classes.drawerPaper,
+            }}
+            onClose={() => setOpen(false)}
+            ModalProps={{
+              keepMounted: true, // Better open performance on mobile.
+            }}
+          >
+            <img
+              src="/img/logo_text.png"
+              style={{ marginTop: 30, width: "80%" }}
+            />
             {drawer}
           </Drawer>
         </Hidden>
@@ -221,10 +220,25 @@ function MainLayout({ children, loading, badge, description, title, route }) {
                 <Box display="flex" alignItems="center">
                   <Typography
                     variant="h4"
-                    style={{ fontWeight: 700, textTransform: "capitalize" }}
+                    textTransform="capitalize"
+                    sx={{
+                      fontSize: {
+                        xs: "h6.fontSize",
+                        md: "h4.fontSize",
+                      },
+                    }}
+                    fontWeight={700}
                   >
                     {title || route}
-                    <span style={{ paddingLeft: 10, color: "#05d" }}>
+                    <span
+                      style={{ paddingLeft: 10, color: "#05d" }}
+                      sx={{
+                        fontSize: {
+                          xs: 5,
+                          md: 12,
+                        },
+                      }}
+                    >
                       {badge}
                     </span>
                   </Typography>
