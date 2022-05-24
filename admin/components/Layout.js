@@ -112,46 +112,23 @@ function MainLayout({ children, loading, badge, description, title, route }) {
     },
     {
       icon: <LocalShipping color="inherit" />,
-      label: "Shippings",
-      active: route === "shippings",
-      href: "/shippings",
-    },
-    {
-      icon: <GroupOutlined color="inherit" />,
-      label: "Partners",
-      active: route === "partners",
-      href: "/partners",
+      label: "Projects",
+      active: route === "projects",
+      href: "/projects",
     },
 
-    {
-      icon: <DirectionsBike color="inherit" />,
-      label: "Riders",
-      active: route === "riders",
-      href: "/riders",
-    },
     {
       icon: <PersonAdd color="inherit" />,
       label: "Users",
       active: route === "users",
       href: "/users",
     },
-    {
-      icon: <NewReleases color="inherit" />,
-      label: "News",
-      active: route === "news",
-      href: "/news",
-    },
+
     {
       icon: <PersonAdd color="inherit" />,
       label: "Reviews",
       active: route === "reviews",
       href: "/reviews",
-    },
-    {
-      icon: <PersonAdd color="inherit" />,
-      label: "Other settings",
-      active: route === "settings",
-      href: "/settings",
     },
   ];
   const drawer = (
