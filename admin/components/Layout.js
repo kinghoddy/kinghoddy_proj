@@ -98,7 +98,7 @@ const useStyles = makeStyles({
     justifyContent: "center",
   },
 });
-function MainLayout({ children, loading, badge, description, title, route }) {
+function MainLayout({ children, loading, badge,Click, description,icon, title, route,button }) {
   const classes = useStyles();
   const [isLoggedIn, setIsLoggedIn] = useState(true);
   const [open, setOpen] = useState(false);
@@ -115,7 +115,12 @@ function MainLayout({ children, loading, badge, description, title, route }) {
       active: route === "projects",
       href: "/projects",
     },
-
+    {
+      icon: <LocalShipping color="inherit" />,
+      label: "Posts",
+      active: route === "Posts",
+      href: "/Posts",
+    },
     {
       icon: <PersonAdd color="inherit" />,
       label: "Users",
@@ -204,6 +209,7 @@ function MainLayout({ children, loading, badge, description, title, route }) {
           </Drawer>
         </Hidden>
       </nav>
+      
       <main className={classes.content}>
         {isLoggedIn && (
           <AppBar position="static" color="transparent" elevation={0}>
@@ -214,8 +220,10 @@ function MainLayout({ children, loading, badge, description, title, route }) {
                 onClick={() => setOpen(!open)}
                 className={classes.menuButton}
               >
+                
                 <MenuSharp />
               </IconButton>
+              
               <Box flex={1}>
                 <Box display="flex" alignItems="center">
                   <Typography
@@ -242,21 +250,21 @@ function MainLayout({ children, loading, badge, description, title, route }) {
                       {badge}
                     </span>
                   </Typography>
-                  <Button
+                 <Button
                     style={{
                       marginLeft: "auto",
                       borderRadius: 10,
 
                       textTransform: "capitalize",
                     }}
-                    startIcon={<PersonOutline />}
+                    startIcon={icon}
                     variant="contained"
                     disableElevation
                     color="secondary"
-                    onClick={logout}
+                    href={Click}
                     size="large"
                   >
-                    Logout{" "}
+                     {button}
                   </Button>
                 </Box>
                 {description && (
