@@ -1,5 +1,5 @@
 import Head from "next/head";
-import Stepper from '../components/Steppers'
+
 import Layout from "../components/Layout";
 import { PersonOutline } from "@mui/icons-material";
 
@@ -11,7 +11,7 @@ export default function Home() {
       route="dashboard"
       button="Log Out"
       icon={<PersonOutline />}
-    ><Stepper/>
+    >
     </Layout>
   );
 }
